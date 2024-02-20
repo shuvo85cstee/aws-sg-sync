@@ -1,4 +1,4 @@
 # aws-sg-sync
-We need to update redshift security group regularly to match the current public IPs of running EC2 instances.
-This script will add new IPs and remove IPs no longer needed in security group.
-It will also logs all changes in security group to s3 for audit.
+This service will add rules to whitelist public ips of running EKS worker nodes in Redshift security group if not present.<br />
+It will also remvove rules from redshift security group when public ips of EKS worker nodes which are no longer active.<br />
+All rules modifications will be logged in S3.
